@@ -3,13 +3,9 @@ from tkinter.font import names
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("Главная страница")
+    return HttpResponse("<h2>Главная</h2>")
 
-def products(request, id):
-    return HttpResponse(f"Товар{id}")
-
-def comments(request, id):
-    return HttpResponse(f"Комментарии о тоаре {id}")
-
-def questions(request, id):
-    return HttpResponse(f"Вопросы о товаре {id}")
+def user(request):
+    age = request.GET.get("age")
+    name = request.GET.get("name")
+    return HttpResponse(f"<h2>Имя: {name} Возраст: {age}</h2>")
