@@ -11,6 +11,6 @@ def access(request, age):
     if age not in range(1, 111):
         return HttpResponseBadRequest("Некорректные данные")
     if (age > 17):
-        return HttpResponse("оступ разрешен")
+        return HttpResponse("Доступ разрешен")
     else:
         return HttpResponseForbidden("Доступ заблокирован: недостаточно лет")
