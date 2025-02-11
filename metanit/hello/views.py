@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.template.response import TemplateResponse
 
 def index(request):
     header = "Данные пользователя" #переменная
@@ -7,10 +7,10 @@ def index(request):
     address = ("Абрикосовая", 23, 45) #кортеж
 
     data = {"header":header, "langs":langs, "user":user, "address":address}
-    return render(request, "index.html", context=data)
+    return TemplateResponse(request, "index.html", data)
 
 def about(request):
-    return render(request, "about.html")
+    return TemplateResponse(request, "about.html")
 
 def contact(request):
-    return render(request, "contact.html")
+    return TemplateResponse(request, "contact.html")
