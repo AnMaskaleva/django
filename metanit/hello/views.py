@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 def index(request):
-    data = {"n":5}
-    return render(request, "index.html", context = data)
+    langs = ["Python", "JavaScript", "Java", "C#", "C++"]
+    return render(request, "index.html", context={"langs": langs})
 
 def about(request):
     return render(request, "about.html")
