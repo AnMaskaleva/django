@@ -1,10 +1,11 @@
-from django.template.response import TemplateResponse
+from django.shortcuts import render
 
 def index(request):
-    return TemplateResponse(request, "index.html")
+    data = {"header":"Hello Django", "message":"Welcome to Python"}
+    return render(request, "index.html", context=data)
 
 def about(request):
-    return TemplateResponse(request, "about.html")
+    return render(request, "about.html")
 
 def contact(request):
-    return TemplateResponse(request, "contact.html")
+    return render(request, "contact.html")
