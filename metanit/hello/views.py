@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 def index(request):
-    return render(request, "index.html", context = {"person":Person("Tom")})
+    return render(request, "index.html", context = {"body":"<h1>Perfect world!</h1>"})
 
 def about(request):
     return render(request, "about.html")

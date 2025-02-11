@@ -6,6 +6,10 @@
 
 </head>
 <body>
-    <h1>Person {{ person.name }}</h1>
+    {{ body }}
+
+    {% autoescape off %}
+        {{ body }}
+    {% endautoescape %}
 </body>
 </html>
