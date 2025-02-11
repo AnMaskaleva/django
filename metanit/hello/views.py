@@ -1,16 +1,15 @@
-from django.template.response import TemplateResponse
+from django.shortcuts import render
 
 def index(request):
-    header = "Данные пользователя" #переменная
-    langs = ["Python", "Java", "C#"] #список
-    user = {"name":"Tom", "age":23} #словарь
-    address = ("Абрикосовая", 23, 45) #кортеж
-
-    data = {"header":header, "langs":langs, "user":user, "address":address}
-    return TemplateResponse(request, "index.html", data)
+    return render(request, "index.html", context = {"person":Person("Tom")})
 
 def about(request):
-    return TemplateResponse(request, "about.html")
+    return render(request, "about.html")
 
 def contact(request):
-    return TemplateResponse(request, "contact.html")
+    return render(request, "contact.html")
+
+class Person:
+
+    def __init__(self, name):
+        self.name = name
