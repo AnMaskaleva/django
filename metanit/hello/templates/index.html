@@ -7,10 +7,11 @@
 </head>
 <body>
 
-    <p>{% now "Y" %}</p>
-    <p>{% now "F j Y" %}</p>
-    <p>{% now "N, j, Y" %}</p>
-    <p>{% now "N j, Y, P" %}</p>
+    <div>
+{% with message="Hello" %}
+    <h2>{{ message|add:" Django"}}</h2>
+{% endwith %}
+    </div>
 
 </body>
 </html>
